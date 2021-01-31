@@ -39,6 +39,7 @@ Constraints:
 -5*105 ≤ mat[i][j] ≤ 5*105
 
 */
+// METHOD 1:-
 class Solution{
     public:
     int Maximum_Sum(vector<vector<int>> &a,int N,int K){
@@ -78,5 +79,36 @@ class Solution{
             } 
         }
         return max_sum;        
+    }  
+};
+
+// METHOD 2:-
+class Solution{
+    public:
+    int Maximum_Sum(vector<vector<int>> &a,int n,int k){
+        int r1=0,r2=k,c1=0,c2=k; 
+        int sum=0,res=INT_MIN;
+        for(int i=0;i<k;i++)
+            for(int j=0;j<k;j++)
+                sum+=a[i][j];
+        res=max(res,sum);
+        int temp=sum;
+        while(r2<=n){
+            while(c2<n){
+                for(int i=r1;i<r2;i++)
+                    sum=sum-a[i][c1]+a[i][c2];
+                c1++;c2++;
+                res=max(res,sum);
+            }
+            c1=0,c2=k;
+            if(r2==n)
+                break;
+            for(int i=c1;i<c2;i++)
+                temp+=a[r2][i]-a[r1][i];
+            sum=temp;
+            r1++;r2++;
+            res=max(res,sum);
+        }
+        return res;
     }  
 };
