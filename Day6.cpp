@@ -41,7 +41,7 @@ Constraints:
 */
 class Solution{
     public:
-    int Maximum_Sum(vector<vector<int>> &a,int n,int k){
+    int Maximum_Sum(vector<vector<int>> &a,int N,int K){
         int stripSum[N][N]; 
         for (int j=0;j<N;j++) 
         { 
