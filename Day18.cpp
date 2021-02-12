@@ -5,7 +5,6 @@
 There are N buildings in Linear Land. They appear in a linear line one after the other and their heights are given in the array arr[]. Geek wants to select three buildings in Linear Land and remodel them as recreational spots. The third of the selected building must be taller than the first and shorter than the second.
 Can geek build the three-building recreational zone? 
 
-
 Example 1:
 
 Input:
