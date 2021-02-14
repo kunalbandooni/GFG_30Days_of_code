@@ -45,3 +45,10 @@ class Solution{
         return ((m-1)*(n-1))/2;
     } 
 };
+/*
+
+Method 2:
+https://www.geeksforgeeks.org/find-the-count-of-unvisited-indices-in-an-infinite-array/
+https://www.youtube.com/watch?v=E2DL6cw6Kvg
+
+*/
