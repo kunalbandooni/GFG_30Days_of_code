@@ -45,13 +45,12 @@ Expected Time Complexity: O(N)
 Expected Auxiliary Space: O(N)
 
 */
-int visited[100005];
-int counted[100005];
-int isstack[100005];
-
-
 class Solution{
-    public:
+    private:
+    
+    int visited[100005];
+    int counted[100005];
+    int isstack[100005];
     // refer https://www.geeksforgeeks.org/detect-cycle-in-a-graph/
     // for cycle detection in directed graph
     bool checkCycle(int i, vector<vector<int>> &ve) {
@@ -90,6 +89,8 @@ class Solution{
         counted[i] = x + duration[i];
         return counted[i];
     }
+    
+    public:
     
     int minTime(vector<pair<int, int>> &vp, int duration[], int n, int m) {
         // stores which modules are independent
