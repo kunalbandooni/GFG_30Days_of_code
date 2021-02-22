@@ -35,3 +35,32 @@ Expected Time Complexity: O(N)
 Expected Auxiliary Space: O(N)
 
 */
+class Solution{
+    int func(int arr[],int n){
+        int ans=0;
+        for(int i=0;i<n;i++){
+            if(arr[i]=='P'){
+                int j=max(0,i-k);
+                bool flag=true;
+                for(int run=j;run<i;run++)
+                    if(arr[run]=='T'){
+                        arr[run]='C';
+                        ++ans;
+                        flag=false;
+                        break;
+                    }
+                if(flag){
+                    j=min(i+k,n);
+                    for(int run=i+1;run<=j;run++)
+                        if(arr[run]=='T'){
+                            arr[run]='C';
+                            ++ans;
+                            flag=false;
+                            break;
+                        }
+                }
+            }
+        }
+        return ans;
+    }
+};
